@@ -1,5 +1,4 @@
 ---
-build: null
 os: ubuntu-24.04
 tools:
   python: "3.13"
