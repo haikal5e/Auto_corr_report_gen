@@ -1,0 +1,8 @@
+.. _Download User Manual:
+
+User Manual
+===========
+
+To learn how to use the tool, click the link below to download the user manual:
+
+:download: `Download User Manual <user_manual.pdf>'

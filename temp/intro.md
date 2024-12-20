@@ -1,0 +1,3 @@
+# Introduction
+
+This documentation outlines the development of a Python-based automation tool designed to generate correlation and process capability (Cpk) reports for the semiconductor industry. The project aims to streamline data analysis workflows by automating the evaluation of key statistical measures, enhancing accuracy, and minimizing manual effort. The tool focuses on performing correlation analysis between units on test boards and assessing process performance through metrics such as mean shift, standard deviation ratio, Cp, and Cpk.

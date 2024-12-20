@@ -1,0 +1,432 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flowchart Documentation &mdash; Automation Correlation and Cpk Report 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/drawio.css?v=25a831d2" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tool" href="tool.html" />
+    <link rel="prev" title="Automation Correlation and Cpk Report Documentation" href="Auto_Report_Gen.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Automation Correlation and Cpk Report
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project_overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="methodology.html">Methodology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Auto_Report_Gen.html">Automation Correlation and Cpk Report Documentation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Flowchart Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#deploy-function">Deploy Function</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#clear-console-function">Clear console function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#display-banner-function">Display banner function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thank-you-banner-function">Thank you banner function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mean-shift-function">Mean shift function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#process-dataframe-function">Process Dataframe function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-setup-information-function">Get Setup Information function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-product-information-function">Get Product Information function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mean-shift-criteria-function">Mean Shift Criteria function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#standard-deviation-ratio-function">Standard Deviation Ratio function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#standard-deviation-ratio-criteria-function">Standard Deviation Ratio Criteria function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#evaluation-based-on-mean-shift-criteria-and-standard-deviation-ratio-criteria-function">Evaluation based on Mean Shift Criteria and Standard Deviation Ratio Criteria function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cp-calculation-for-reference-board-function">Cp Calculation for Reference Board function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cpk-calculation-for-reference-board-function">Cpk Calculation for Reference Board function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cp-calculation-for-new-board-function">Cp Calculation for New Board function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cpk-calculation-for-new-board-function">Cpk Calculation for New Board function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#check-failed-test-all-units-function">Check Failed test all units function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#autofit-columns-for-generate-report-function">Autofit columns for generate report function</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#main-data-preparation-and-data-processing">Main - Data preparation and data processing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#display-banner-asking-input">Display Banner &amp; Asking Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-process-limit-file">Data process limit file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-initialize-reference-board-file">Data initialize Reference Board file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-initialize-new-board-all-units-files">Data initialize New Board all units files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-process-for-reference-board-and-new-board-all-units-files">Data process for Reference Board and New Board all units files</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#main-correlation-report">Main - Correlation Report</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#calculate-mean-and-standard-deviation-for-reference-board">Calculate Mean and Standard Deviation for Reference Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#calculate-mean-and-standard-deviation-for-new-board">Calculate Mean and Standard Deviation for New Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-dataframe-for-limit-and-rb-for-all-units">Create dataframe for limit and RB for all units</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-and-analyzing-dataframes-all-nbs-for-all-units">Create and Analyzing DataFrames all NBS for all Units</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#store-all-nbs-based-on-unit-results-and-overall-nbs-status">Store all NBs based on Unit Results and Overall NBs Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#combine-limits-with-all-nbs-results">Combine Limits with all NBs Results</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#main-cpk-report">Main - Cpk Report</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#combine-unit-results-for-rb-and-all-nbs-into-a-single-dataframe-respectively">Combine Unit Results for RB and all NBs into a Single DataFrame respectively</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#calculate-mean-for-rb-and-all-nbs-for-dataframes">Calculate Mean for RB and all NBs for DataFrames</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#calculate-standard-deviation-for-rb-and-all-nbs-for-dataframes">Calculate Standard Deviation for RB and all NBs for DataFrames</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#combine-mean-and-standard-deviation-for-rb-and-nbs">Combine Mean and Standard Deviation for RB and NBs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#calculate-cp-and-cpk-for-rb">Calculate Cp and Cpk for RB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#calculate-cp-and-cpk-for-nbs">Calculate Cp and Cpk for NBs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#main-generate-report">Main - Generate Report</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-a-correlation-table-for-test-results-for-rb-and-all-nbs">Create a Correlation Table for Test Results for RB and all NBs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-dataframes-from-product-and-setup-information">Create DataFrames from Product and Setup Information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generate-output-file">Generate output file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#display-thank-you-and-countdown-timer-with-exit">Display thank you and countdown timer with exit</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tool.html">Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_manual.html">User Manual</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Automation Correlation and Cpk Report</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Flowchart Documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/flowchart.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="flowchart-documentation">
+<h1>Flowchart Documentation<a class="headerlink" href="#flowchart-documentation" title="Link to this heading"></a></h1>
+<section id="deploy-function">
+<h2>Deploy Function<a class="headerlink" href="#deploy-function" title="Link to this heading"></a></h2>
+<section id="clear-console-function">
+<h3>Clear console function<a class="headerlink" href="#clear-console-function" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="_images/clear_console.png"><img alt="clear_console()" class="align-center" src="_images/clear_console.png" style="width: 721.0px; height: 857.0px;" />
+</a>
+</section>
+<section id="display-banner-function">
+<h3>Display banner function<a class="headerlink" href="#display-banner-function" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="_images/display_banner.png"><img alt="display_banner()" class="align-center" src="_images/display_banner.png" style="width: 452.0px; height: 742.0px;" />
+</a>
+</section>
+<section id="thank-you-banner-function">
+<h3>Thank you banner function<a class="headerlink" href="#thank-you-banner-function" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="_images/thank_you.png"><img alt="thank_you()" class="align-center" src="_images/thank_you.png" style="width: 450.0px; height: 777.0px;" />
+</a>
+</section>
+<section id="mean-shift-function">
+<h3>Mean shift function<a class="headerlink" href="#mean-shift-function" title="Link to this heading"></a></h3>
+<p><strong>Part 1</strong></p>
+<a class="reference internal image-reference" href="_images/mean_shift-Page-1.png"><img alt="mean_shift-Page-1()" class="align-center" src="_images/mean_shift-Page-1.png" style="width: 715.0px; height: 766.0px;" />
+</a>
+<p><strong>Part 2</strong></p>
+<a class="reference internal image-reference" href="_images/mean_shift-Page-2.png"><img alt="mean_shift-Page-2()" class="align-center" src="_images/mean_shift-Page-2.png" style="width: 779.0px; height: 979.0px;" />
+</a>
+</section>
+<section id="process-dataframe-function">
+<h3>Process Dataframe function<a class="headerlink" href="#process-dataframe-function" title="Link to this heading"></a></h3>
+<p><strong>Part 1</strong></p>
+<a class="reference internal image-reference" href="_images/process_df-Page-1.png"><img alt="process_df-Page-1()" class="align-center" src="_images/process_df-Page-1.png" style="width: 562.0px; height: 1152.0px;" />
+</a>
+<p><strong>Part 2</strong></p>
+<a class="reference internal image-reference" href="_images/process_df-Page-2.png"><img alt="process_df-Page-2()" class="align-center" src="_images/process_df-Page-2.png" style="width: 507.0px; height: 910.0px;" />
+</a>
+</section>
+<section id="get-setup-information-function">
+<h3>Get Setup Information function<a class="headerlink" href="#get-setup-information-function" title="Link to this heading"></a></h3>
+<p><strong>Part 1</strong></p>
+<a class="reference internal image-reference" href="_images/get_setup_info-Page-1.png"><img alt="get_setup_info-Page-1()" class="align-center" src="_images/get_setup_info-Page-1.png" style="width: 709.0px; height: 1278.0px;" />
+</a>
+<p><strong>Part 2</strong></p>
+<a class="reference internal image-reference" href="_images/get_setup_info-Page-2.png"><img alt="get_setup_info-Page-2()" class="align-center" src="_images/get_setup_info-Page-2.png" style="width: 732.0px; height: 1011.0px;" />
+</a>
+</section>
+<section id="get-product-information-function">
+<h3>Get Product Information function<a class="headerlink" href="#get-product-information-function" title="Link to this heading"></a></h3>
+<p><strong>Part 1</strong></p>
+<a class="reference internal image-reference" href="_images/get_product_info-Page-1.png"><img alt="get_product_info-Page-1()" class="align-center" src="_images/get_product_info-Page-1.png" style="width: 738.0px; height: 1306.0px;" />
+</a>
+<p><strong>Part 2</strong></p>
+<a class="reference internal image-reference" href="_images/get_product_info-Page-2.png"><img alt="get_product_info-Page-2()" class="align-center" src="_images/get_product_info-Page-2.png" style="width: 747.0px; height: 931.0px;" />
+</a>
+</section>
+<section id="mean-shift-criteria-function">
+<h3>Mean Shift Criteria function<a class="headerlink" href="#mean-shift-criteria-function" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="_images/mean_shift_crit.png"><img alt="mean_shift_crit()" class="align-center" src="_images/mean_shift_crit.png" style="width: 968.0px; height: 917.0px;" />
+</a>
+</section>
+<section id="standard-deviation-ratio-function">
+<h3>Standard Deviation Ratio function<a class="headerlink" href="#standard-deviation-ratio-function" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="_images/sd_ratio.png"><img alt="sd_ratio()" class="align-center" src="_images/sd_ratio.png" style="width: 786.0px; height: 1072.0px;" />
+</a>
+</section>
+<section id="standard-deviation-ratio-criteria-function">
+<h3>Standard Deviation Ratio Criteria function<a class="headerlink" href="#standard-deviation-ratio-criteria-function" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="_images/sd_ratio_crit.png"><img alt="sd_ratio_crit()" class="align-center" src="_images/sd_ratio_crit.png" style="width: 581.0px; height: 670.0px;" />
+</a>
+</section>
+<section id="evaluation-based-on-mean-shift-criteria-and-standard-deviation-ratio-criteria-function">
+<h3>Evaluation based on Mean Shift Criteria and Standard Deviation Ratio Criteria function<a class="headerlink" href="#evaluation-based-on-mean-shift-criteria-and-standard-deviation-ratio-criteria-function" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="_images/eva_status.png"><img alt="eva_status()" class="align-center" src="_images/eva_status.png" style="width: 874.0px; height: 940.0px;" />
+</a>
+</section>
+<section id="cp-calculation-for-reference-board-function">
+<h3>Cp Calculation for Reference Board function<a class="headerlink" href="#cp-calculation-for-reference-board-function" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="_images/calc_cp_rb.png"><img alt="calc_cp_rb()" class="align-center" src="_images/calc_cp_rb.png" style="width: 785.0px; height: 943.0px;" />
+</a>
+</section>
+<section id="cpk-calculation-for-reference-board-function">
+<h3>Cpk Calculation for Reference Board function<a class="headerlink" href="#cpk-calculation-for-reference-board-function" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="_images/calc_cpk_rb.png"><img alt="calc_cpk_rb()" class="align-center" src="_images/calc_cpk_rb.png" style="width: 933.0px; height: 1210.0px;" />
+</a>
+</section>
+<section id="cp-calculation-for-new-board-function">
+<h3>Cp Calculation for New Board function<a class="headerlink" href="#cp-calculation-for-new-board-function" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="_images/calc_cp_nb.png"><img alt="calc_cp_nb()" class="align-center" src="_images/calc_cp_nb.png" style="width: 853.0px; height: 930.0px;" />
+</a>
+</section>
+<section id="cpk-calculation-for-new-board-function">
+<h3>Cpk Calculation for New Board function<a class="headerlink" href="#cpk-calculation-for-new-board-function" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="_images/calc_cpk_nb.png"><img alt="calc_cpk_nb()" class="align-center" src="_images/calc_cpk_nb.png" style="width: 927.0px; height: 1190.0px;" />
+</a>
+</section>
+<section id="check-failed-test-all-units-function">
+<h3>Check Failed test all units function<a class="headerlink" href="#check-failed-test-all-units-function" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="_images/check_value.png"><img alt="check_value()" class="align-center" src="_images/check_value.png" style="width: 839.0px; height: 791.0px;" />
+</a>
+</section>
+<section id="autofit-columns-for-generate-report-function">
+<h3>Autofit columns for generate report function<a class="headerlink" href="#autofit-columns-for-generate-report-function" title="Link to this heading"></a></h3>
+<p><strong>Part 1</strong></p>
+<a class="reference internal image-reference" href="_images/autosize_columns-Page-1.png"><img alt="autosize_columns-Page-1()" class="align-center" src="_images/autosize_columns-Page-1.png" style="width: 928.0px; height: 1108.0px;" />
+</a>
+<p><strong>Part 2</strong></p>
+<a class="reference internal image-reference" href="_images/autosize_columns-Page-2.png"><img alt="autosize_columns-2()" class="align-center" src="_images/autosize_columns-Page-2.png" style="width: 462.0px; height: 748.0px;" />
+</a>
+</section>
+</section>
+<section id="main-data-preparation-and-data-processing">
+<h2>Main - Data preparation and data processing<a class="headerlink" href="#main-data-preparation-and-data-processing" title="Link to this heading"></a></h2>
+<section id="display-banner-asking-input">
+<h3>Display Banner &amp; Asking Input<a class="headerlink" href="#display-banner-asking-input" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="_images/display_banner1.png"><img alt="display_banner.png()" class="align-center" src="_images/display_banner1.png" style="width: 433.0px; height: 950.0px;" />
+</a>
+</section>
+<section id="data-process-limit-file">
+<h3>Data process limit file<a class="headerlink" href="#data-process-limit-file" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="_images/Limit_clean.png"><img alt="Limit_clean.png()" class="align-center" src="_images/Limit_clean.png" style="width: 450.0px; height: 1178.0px;" />
+</a>
+</section>
+<section id="data-initialize-reference-board-file">
+<h3>Data initialize Reference Board file<a class="headerlink" href="#data-initialize-reference-board-file" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="_images/RB_data_init.png"><img alt="RB_data_init.png()" class="align-center" src="_images/RB_data_init.png" style="width: 659.0px; height: 1110.0px;" />
+</a>
+</section>
+<section id="data-initialize-new-board-all-units-files">
+<h3>Data initialize New Board all units files<a class="headerlink" href="#data-initialize-new-board-all-units-files" title="Link to this heading"></a></h3>
+<p><strong>Part 1</strong></p>
+<a class="reference internal image-reference" href="_images/NB_data_init_pt1.png"><img alt="NB_data_init_pt1()" class="align-center" src="_images/NB_data_init_pt1.png" style="width: 460.0px; height: 930.0px;" />
+</a>
+<p><strong>Part 2</strong></p>
+<a class="reference internal image-reference" href="_images/NB_data_init_pt2.png"><img alt="NB_data_init_pt2()" class="align-center" src="_images/NB_data_init_pt2.png" style="width: 773.0px; height: 1100.0px;" />
+</a>
+</section>
+<section id="data-process-for-reference-board-and-new-board-all-units-files">
+<h3>Data process for Reference Board and New Board all units files<a class="headerlink" href="#data-process-for-reference-board-and-new-board-all-units-files" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="_images/process_df.png"><img alt="process_df()" class="align-center" src="_images/process_df.png" style="width: 528.0px; height: 1350.0px;" />
+</a>
+</section>
+</section>
+<section id="main-correlation-report">
+<h2>Main - Correlation Report<a class="headerlink" href="#main-correlation-report" title="Link to this heading"></a></h2>
+<section id="calculate-mean-and-standard-deviation-for-reference-board">
+<h3>Calculate Mean and Standard Deviation for Reference Board<a class="headerlink" href="#calculate-mean-and-standard-deviation-for-reference-board" title="Link to this heading"></a></h3>
+<p><strong>Part 1</strong></p>
+<a class="reference internal image-reference" href="_images/RB_mean_sd_pt1.png"><img alt="RB_mean_sd_pt1()" class="align-center" src="_images/RB_mean_sd_pt1.png" style="width: 562.0px; height: 1172.0px;" />
+</a>
+<p><strong>Part 2</strong></p>
+<a class="reference internal image-reference" href="_images/RB_mean_sd_pt2.png"><img alt="RB_mean_sd_pt2()" class="align-center" src="_images/RB_mean_sd_pt2.png" style="width: 580.0px; height: 1290.0px;" />
+</a>
+</section>
+<section id="calculate-mean-and-standard-deviation-for-new-board">
+<h3>Calculate Mean and Standard Deviation for New Board<a class="headerlink" href="#calculate-mean-and-standard-deviation-for-new-board" title="Link to this heading"></a></h3>
+<p><strong>Part 1</strong></p>
+<a class="reference internal image-reference" href="_images/NB_mean_sd_pt1.png"><img alt="NB_mean_sd_pt1()" class="align-center" src="_images/NB_mean_sd_pt1.png" style="width: 530.0px; height: 1222.0px;" />
+</a>
+<p><strong>Part 2</strong></p>
+<a class="reference internal image-reference" href="_images/NB_mean_sd_pt2.png"><img alt="NB_mean_sd_pt2()" class="align-center" src="_images/NB_mean_sd_pt2.png" style="width: 451.0px; height: 860.0px;" />
+</a>
+</section>
+<section id="create-dataframe-for-limit-and-rb-for-all-units">
+<h3>Create dataframe for limit and RB for all units<a class="headerlink" href="#create-dataframe-for-limit-and-rb-for-all-units" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="_images/RB_lim_calc.png"><img alt="RB_lim_calc()" class="align-center" src="_images/RB_lim_calc.png" style="width: 532.0px; height: 915.0px;" />
+</a>
+</section>
+<section id="create-and-analyzing-dataframes-all-nbs-for-all-units">
+<h3>Create and Analyzing DataFrames all NBS for all Units<a class="headerlink" href="#create-and-analyzing-dataframes-all-nbs-for-all-units" title="Link to this heading"></a></h3>
+<p><strong>Part 1</strong></p>
+<a class="reference internal image-reference" href="_images/RB_NBU_pt1.png"><img alt="RB_NBU_pt1()" class="align-center" src="_images/RB_NBU_pt1.png" style="width: 565.0px; height: 1162.0px;" />
+</a>
+<p><strong>Part 2</strong></p>
+<a class="reference internal image-reference" href="_images/RB_NBU_pt2.png"><img alt="RB_NBU_pt2()" class="align-center" src="_images/RB_NBU_pt2.png" style="width: 452.0px; height: 861.0px;" />
+</a>
+<p><strong>Part 3</strong></p>
+<a class="reference internal image-reference" href="_images/RB_NBU_pt3.png"><img alt="RB_NBU_pt3()" class="align-center" src="_images/RB_NBU_pt3.png" style="width: 881.0px; height: 1128.0px;" />
+</a>
+</section>
+<section id="store-all-nbs-based-on-unit-results-and-overall-nbs-status">
+<h3>Store all NBs based on Unit Results and Overall NBs Status<a class="headerlink" href="#store-all-nbs-based-on-unit-results-and-overall-nbs-status" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="_images/nb_results.png"><img alt="nb_results()" class="align-center" src="_images/nb_results.png" style="width: 845.0px; height: 942.0px;" />
+</a>
+</section>
+<section id="combine-limits-with-all-nbs-results">
+<h3>Combine Limits with all NBs Results<a class="headerlink" href="#combine-limits-with-all-nbs-results" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="_images/nbtrueresults.png"><img alt="nbtrueresults()" class="align-center" src="_images/nbtrueresults.png" style="width: 501.0px; height: 870.0px;" />
+</a>
+</section>
+</section>
+<section id="main-cpk-report">
+<h2>Main - Cpk Report<a class="headerlink" href="#main-cpk-report" title="Link to this heading"></a></h2>
+<section id="combine-unit-results-for-rb-and-all-nbs-into-a-single-dataframe-respectively">
+<h3>Combine Unit Results for RB and all NBs into a Single DataFrame respectively<a class="headerlink" href="#combine-unit-results-for-rb-and-all-nbs-into-a-single-dataframe-respectively" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="_images/RBDF_NBDF.png"><img alt="RBDF_NBDF()" class="align-center" src="_images/RBDF_NBDF.png" style="width: 499.0px; height: 945.0px;" />
+</a>
+</section>
+<section id="calculate-mean-for-rb-and-all-nbs-for-dataframes">
+<h3>Calculate Mean for RB and all NBs for DataFrames<a class="headerlink" href="#calculate-mean-for-rb-and-all-nbs-for-dataframes" title="Link to this heading"></a></h3>
+<p><strong>Part 1</strong></p>
+<a class="reference internal image-reference" href="_images/mean_rbdf_nbdf_pt1.png"><img alt="mean_rbdf_nbdf_pt1()" class="align-center" src="_images/mean_rbdf_nbdf_pt1.png" style="width: 445.0px; height: 832.0px;" />
+</a>
+<p><strong>Part 2</strong></p>
+<a class="reference internal image-reference" href="_images/mean_rbdf_nbdf_pt2.png"><img alt="mean_rbdf_nbdf_pt2()" class="align-center" src="_images/mean_rbdf_nbdf_pt2.png" style="width: 574.0px; height: 1150.0px;" />
+</a>
+</section>
+<section id="calculate-standard-deviation-for-rb-and-all-nbs-for-dataframes">
+<h3>Calculate Standard Deviation for RB and all NBs for DataFrames<a class="headerlink" href="#calculate-standard-deviation-for-rb-and-all-nbs-for-dataframes" title="Link to this heading"></a></h3>
+<p><strong>Part 1</strong></p>
+<a class="reference internal image-reference" href="_images/std_rbdf_nbdf_pt1.png"><img alt="std_rbdf_nbdf_pt1()" class="align-center" src="_images/std_rbdf_nbdf_pt1.png" style="width: 445.0px; height: 802.0px;" />
+</a>
+<p><strong>Part 2</strong></p>
+<a class="reference internal image-reference" href="_images/std_rbdf_nbdf_pt2.png"><img alt="std_rbdf_nbdf_pt2()" class="align-center" src="_images/std_rbdf_nbdf_pt2.png" style="width: 498.0px; height: 1130.0px;" />
+</a>
+</section>
+<section id="combine-mean-and-standard-deviation-for-rb-and-nbs">
+<h3>Combine Mean and Standard Deviation for RB and NBs<a class="headerlink" href="#combine-mean-and-standard-deviation-for-rb-and-nbs" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="_images/meanstd_rbdf_nbdf.png"><img alt="meanstd_rbdf_nbdf()" class="align-center" src="_images/meanstd_rbdf_nbdf.png" style="width: 572.0px; height: 1120.0px;" />
+</a>
+</section>
+<section id="calculate-cp-and-cpk-for-rb">
+<h3>Calculate Cp and Cpk for RB<a class="headerlink" href="#calculate-cp-and-cpk-for-rb" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="_images/rbcpcpk.png"><img alt="rbcpcpk()" class="align-center" src="_images/rbcpcpk.png" style="width: 343.0px; height: 870.0px;" />
+</a>
+</section>
+<section id="calculate-cp-and-cpk-for-nbs">
+<h3>Calculate Cp and Cpk for NBs<a class="headerlink" href="#calculate-cp-and-cpk-for-nbs" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="_images/nbcpkresult.png"><img alt="nbcpkresult()" class="align-center" src="_images/nbcpkresult.png" style="width: 801.0px; height: 1270.0px;" />
+</a>
+</section>
+</section>
+<section id="main-generate-report">
+<h2>Main - Generate Report<a class="headerlink" href="#main-generate-report" title="Link to this heading"></a></h2>
+<section id="create-a-correlation-table-for-test-results-for-rb-and-all-nbs">
+<h3>Create a Correlation Table for Test Results for RB and all NBs<a class="headerlink" href="#create-a-correlation-table-for-test-results-for-rb-and-all-nbs" title="Link to this heading"></a></h3>
+<p><strong>Part 1</strong></p>
+<a class="reference internal image-reference" href="_images/corr_table_pt1.png"><img alt="corr_table_pt1()" class="align-center" src="_images/corr_table_pt1.png" style="width: 449.0px; height: 1182.0px;" />
+</a>
+<p><strong>Part 2</strong></p>
+<a class="reference internal image-reference" href="_images/corr_table_pt2.png"><img alt="corr_table_pt2()" class="align-center" src="_images/corr_table_pt2.png" style="width: 455.0px; height: 1048.0px;" />
+</a>
+</section>
+<section id="create-dataframes-from-product-and-setup-information">
+<h3>Create DataFrames from Product and Setup Information<a class="headerlink" href="#create-dataframes-from-product-and-setup-information" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="_images/Info.png"><img alt="Info()" class="align-center" src="_images/Info.png" style="width: 451.0px; height: 1044.0px;" />
+</a>
+</section>
+<section id="generate-output-file">
+<h3>Generate output file<a class="headerlink" href="#generate-output-file" title="Link to this heading"></a></h3>
+<p><strong>Part 1</strong></p>
+<a class="reference internal image-reference" href="_images/export_to_xlsx_pt1.png"><img alt="export_to_xlsx_pt1()" class="align-center" src="_images/export_to_xlsx_pt1.png" style="width: 454.0px; height: 1272.0px;" />
+</a>
+<p><strong>Part 2</strong></p>
+<a class="reference internal image-reference" href="_images/export_to_xlsx_pt2.png"><img alt="export_to_xlsx_pt2()" class="align-center" src="_images/export_to_xlsx_pt2.png" style="width: 456.0px; height: 1076.0px;" />
+</a>
+</section>
+<section id="display-thank-you-and-countdown-timer-with-exit">
+<h3>Display thank you and countdown timer with exit<a class="headerlink" href="#display-thank-you-and-countdown-timer-with-exit" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="_images/Outro.png"><img alt="Outro()" class="align-center" src="_images/Outro.png" style="width: 660.0px; height: 1152.0px;" />
+</a>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Auto_Report_Gen.html" class="btn btn-neutral float-left" title="Automation Correlation and Cpk Report Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tool.html" class="btn btn-neutral float-right" title="Tool" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Mohamad Haikal bin Mohamad Nazari.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
